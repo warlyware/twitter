@@ -27,7 +27,7 @@ twatter.service('AuthService', function(Auth, $location, $firebaseObject) {
     .then(function(userData) {
       console.log("User " + userData.uid + " created successfully!");
       var userRef = new Firebase('https://twatter-sandwich.firebaseio.com/USERS/' + userData.uid);      
-      var userRefObj = $firebaseObject(userRef);
+      var userObj = $firebaseObject(userRef);
       userRef.set({
         username: username,
         name: userData.uid,

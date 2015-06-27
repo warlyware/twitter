@@ -18,5 +18,5 @@ var twatter = angular.module('twatter', ['ngRoute', 'firebase'])
     .otherwise({
       redirectTo: '/'
     });
-});
-// .constant('FIREBASE_URL', 'https://twatter-sandwich.firebaseio.com/'))
+})
+.constant('FIREBASE_URL', 'https://twatter-sandwich.firebaseio.com/');

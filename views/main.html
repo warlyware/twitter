@@ -1,13 +1,14 @@
 
-<button class="btn btn-default btn-sm pull-right" ng-show="authData" ng-click="logoutUser()">logout</button>
-<div class="row" ng-show="authData">
+<button class="btn btn-default btn-sm pull-right" ng-show="currentUser" ng-click="logoutUser()">logout</button>
+<div class="row" ng-show="currentUser">
   <div class="col-xs-12 ">
-    <textarea class="center-block" cols="30" rows="5" ng-model="data.text"></textarea>
-    <h5 class="text-center">you typed: {{data.text}}</h5>
+    <h4 class="text-center">Hello {{currentUser.email}}!</h4>
+    <textarea class="center-block" cols="30" rows="5" ng-model="tweet.text"></textarea>
+    <h5 class="text-center">you typed: {{tweet.text}}</h5>
   </div>
 </div>
 
-<div class="row" ng-hide="authData">
+<div class="row" ng-hide="currentUser">
   <div class="col-xs-12">
     <h4 class="text-center">you must <a href="#/login">login first</a></h4>
   </div>
