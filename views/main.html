@@ -1,0 +1,14 @@
+
+<button class="btn btn-default btn-sm pull-right" ng-show="authData" ng-click="logoutUser()">logout</button>
+<div class="row" ng-show="authData">
+  <div class="col-xs-12 ">
+    <textarea class="center-block" cols="30" rows="5" ng-model="data.text"></textarea>
+    <h5 class="text-center">you typed: {{data.text}}</h5>
+  </div>
+</div>
+
+<div class="row" ng-hide="authData">
+  <div class="col-xs-12">
+    <h4 class="text-center">you must <a href="#/login">login first</a></h4>
+  </div>
+</div>

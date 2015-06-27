@@ -1,0 +1,16 @@
+.title {
+  font-size: 2em;
+}
+
+.icecream span{
+  position: relative;
+  content: 'icecream sandwich';
+}
+
+.icecream:hover div.new-label span{
+  display: none;
+}
+
+.icecream:hover div.new-label:after{
+  content: 'twatter sandwich';
+}

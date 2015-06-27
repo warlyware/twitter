@@ -1,0 +1,21 @@
+<button class="btn btn-default btn-sm pull-right" ng-show="authData" ng-click="logoutUser()">logout</button>
+<div class="row">
+  <div class="col-xs-6 col-xs-offset-3" ng-hide="authData">
+    <h4 class="text-center">register</h4>
+    <form class="form well">
+      <div class="form-group">
+        <label class="sr-only" for="usernameInput">username</label>
+        <input type="text" class="form-control" id="usernameInput" placeholder="username" ng-model="reg.username">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="emailInput">email address</label>
+        <input type="email" class="form-control" id="emailInput" placeholder="email" ng-model="reg.email">
+      </div>
+      <div class="form-group">
+        <label class="sr-only" for="passwordInput">password</label>
+        <input type="password" class="form-control" id="passwordInput" placeholder="password" ng-model="reg.password">
+      </div>
+      <button ng-click="registerUser()" class="btn btn-default">register</button>
+    </form>
+  </div>
+</div>
