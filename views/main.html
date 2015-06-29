@@ -1,15 +1,30 @@
-
-<button class="btn btn-default btn-sm pull-right" ng-show="currentUser" ng-click="logoutUser()">logout</button>
-<div class="row" ng-show="currentUser">
-  <div class="col-xs-12 ">
-    <h4 class="text-center">Hello {{currentUser.email}}!</h4>
-    <textarea class="center-block" cols="30" rows="5" ng-model="tweet.text"></textarea>
-    <h5 class="text-center">you typed: {{tweet.text}}</h5>
+<div>
+  <div>
+    <div class="col-xs-8">
+      <textarea class="center-block tweet-box" cols="30" rows="5" ng-model="currentTweet.text"></textarea>
+      <button class="btn btn-success center-block" ng-click="submitTweet(currentTweet.text, currentUser)">SUBMIT</button>
+    </div>
+    <div class="row">
+      <div class="col-xs-offset-3 col-xs-6 tweets-list">
+        <div class="media" ng-repeat="tweet in tweets | orderBy:'timestamp':true track by $index">
+          <div class="media-left">
+            <a href="#">
+              <img class="media-object user-tweet-img" ng-src="{{tweet.userimg}}">
+            </a>
+          </div>
+          <div class="media-body">
+            <button class="btn btn-default pull-right" ng-click="followUser($index)">follow</button>
+            <h4 class="media-heading">{{tweet.username}}</h4>
+            {{tweet.content}}
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<div class="row" ng-hide="currentUser">
-  <div class="col-xs-12">
+<div ng-hide="currentUser">
+  <div class="col-xs-8">
     <h4 class="text-center">you must <a href="#/login">login first</a></h4>
   </div>
 </div>

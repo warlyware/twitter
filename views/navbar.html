@@ -1,0 +1,35 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" ng-show="currentUser">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="">
+        <div class="icecream">
+          <div class="new-label">
+            <span>icecream sandwich</span>
+          </div>
+        </div>
+        <img src="img/logo.jpg" class="logo-img center-block">
+      </a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+      <ul class="nav navbar-nav navbar-right" ng-show="currentUser">
+        <!-- <li><a class="btn btn-success" id="tweet-btn" ng-click="showTweetBox()" href="#">Tweet</a></li> -->
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{currentUser.username}}<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">profile</a></li>
+            <li><a href="#">users</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="" ng-click="logoutUser()">logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>

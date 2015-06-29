@@ -6,17 +6,22 @@ twatter.service('AuthService', function(Auth, $location, $firebaseObject) {
       email: email,
       password: password
     })
+    .then(function(authData) {
+      if (authData) {
+        $location.path('/main');
+      }
+    })
     .catch(function(err) {
       console.log(err);
-    })
-    .then(function() {
-      $location.path('/main');
     });
   }
 
   this.logout = function() {
     Auth.$unauth();
-    $location.path('/login');
+  }
+
+  this.resolveUser = function() {
+    return Auth.$getAuth();
   }
 
   this.register = function(username, email, password) {
@@ -26,10 +31,12 @@ twatter.service('AuthService', function(Auth, $location, $firebaseObject) {
     })
     .then(function(userData) {
       console.log("User " + userData.uid + " created successfully!");
+      bootbox.alert("Thank you for registering " + username);
       var userRef = new Firebase('https://twatter-sandwich.firebaseio.com/USERS/' + userData.uid);      
       var userObj = $firebaseObject(userRef);
       userRef.set({
         username: username,
+        img: '/img/user.png',
         name: userData.uid,
         email: email
       });

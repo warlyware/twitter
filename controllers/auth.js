@@ -1,4 +1,5 @@
-twatter.controller('AuthCtrl', function($scope, $rootScope, $firebaseAuth, $firebaseObject, $location, Auth, AuthService){
+twatter.controller('AuthCtrl', function($scope, $rootScope, $firebaseAuth, $firebaseObject,
+  $location, Auth, AuthService, currentAuth) {
   console.log('loaded AuthCtrl');
 
   $scope.registerUser = function() {
@@ -7,10 +8,6 @@ twatter.controller('AuthCtrl', function($scope, $rootScope, $firebaseAuth, $fire
 
   $scope.loginUser = function() {
     AuthService.login($scope.login.email, $scope.login.password);
-  }
-
-  $scope.logoutUser = function() {
-    AuthService.logout();
   }
 
 });

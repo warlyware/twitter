@@ -10,25 +10,25 @@
     <link rel="shortcut icon" href="/favicon.ico">
   </head>
   <body>
+    <div ng-include= src="views/navbar.html" ng-controller="AuthCheckCtrl"></div>
     <div class='container'>
-      <div class="row text-center title" ng-controller="AuthCheckCtrl">
-        <div class="icecream col-xs-4 col-xs-offset-4">
-          <div class="new-label">
-            <span>icecream sandwich</span>
-          </div>
-        </div>
+      <div class="col-xs-2">
+        <div ng-include= src="views/sidebar.html"></div>
       </div>
-      <div ng-view></div>
+      <ng-view></ng-view>
     </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/firebase/firebase.js"></script>
     <script src="/bower_components/angular/angular.js"></script>
     <script src="/bower_components/angular-route/angular-route.min.js"></script>
     <script src="/bower_components/angularfire/dist/angularfire.min.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
     <script src="app.js"></script>
     <script src="services/authservice.js"></script>
     <script src="factories/auth.js"></script>
+    <script src="factories/tweet.js"></script>
     <script src="controllers/main.js"></script>
     <script src="controllers/auth.js"></script>
     <script src="controllers/authcheck.js"></script>

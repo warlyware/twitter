@@ -1,8 +1,64 @@
-.title {
-  font-size: 2em;
+body {
+  background-color: #0084B4;
+  margin-top: 80px;
 }
 
-.icecream span{
+h4 {
+  color: white;
+}
+
+a {
+  color: #19C2FF;
+}
+
+.logo-img {
+  position: fixed;
+  top: 12px;
+  left: 30px;
+  float: left;
+}
+
+.navbar-brand img {
+  width: 45px;
+}
+
+#user-name {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 1.5em;
+  color: white;
+}
+
+#user-img {
+  margin-top: 20px;
+  width: 100px;
+  border-radius: 10px;
+}
+
+#tweet-btn {
+  color: white;
+}
+
+.tweet-box {
+  margin-top: 20px;
+}
+
+.title {
+  font-size: 2em;
+  color: white;
+  text-align: center;
+  position: fixed;
+  top: 12px;
+  left: 50px;
+}
+
+.icecream {
+  position: fixed;
+  top: 15px;
+  left: 100px;
+}
+
+.icecream span {
   position: relative;
   content: 'icecream sandwich';
 }
@@ -13,4 +69,23 @@
 
 .icecream:hover div.new-label:after{
   content: 'twatter sandwich';
+  font-style: italic;
+}
+
+.tweets-list {
+  margin-top: 20px;
+}
+
+.media {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.media h4 {
+  color: black;
+}
+
+.user-tweet-img {
+  width: 50px;
 }
